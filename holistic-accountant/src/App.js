@@ -1,10 +1,14 @@
 import React from 'react';
 import TransactionListComponent from './Components/TransactionList/TransactionListComponent'
+import TransactionDashboardComponent from './Components/Dashboard/DashboardComponent'
 import './App.css';
 
 function App() {
   return (
-    <TransactionListComponent/>
+    <div>
+      <TransactionListComponent/>
+      <TransactionDashboardComponent/>
+    </div>
   );
 }
 

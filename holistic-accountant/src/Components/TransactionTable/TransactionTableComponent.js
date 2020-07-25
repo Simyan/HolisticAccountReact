@@ -1,17 +1,22 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
 import {Table} from 'semantic-ui-react'
 
 
 function TransactionTableComponent(){
 
- const data = {
-    records: [
-        {merchant: "Nintendo", price: "510", purchaseDate: "20th June 2020 3:20pm"},
-        {merchant: "Akiba Dori", price: "50", purchaseDate: "25th June 2020 8:50pm"},
-        {merchant: "Grub shack", price: "70", purchaseDate: "29th June 2020 1:43pm"},
-    ]
- }
+ const [transactionState, setTransactionState] = useState([]);   
+
+
+ useEffect(() => {
+     const url = "https://localhost:44384/transaction/";
+     
+     fetch(url)
+        .then((resp) => resp.json())
+        .then((resp) => {
+            console.log(resp)
+            setTransactionState(resp)
+        })
+ }, [setTransactionState])
 
   return (
   <div>
@@ -22,18 +27,22 @@ function TransactionTableComponent(){
         <Table.HeaderCell>Merchant</Table.HeaderCell>
         <Table.HeaderCell>Price</Table.HeaderCell>
         <Table.HeaderCell>Date</Table.HeaderCell>
+        <Table.HeaderCell>Type</Table.HeaderCell>
+        <Table.HeaderCell>Balance</Table.HeaderCell>
       </Table.Row>
     </Table.Header>
 
     <Table.Body>
-    {data.records.map( row => 
+    {transactionState.map( row => 
         { 
-            const {merchant, price, purchaseDate} = row
+            const {merchant, amount, purchasedOn, type, balance} = row
             return(
                 <Table.Row>
                 <Table.Cell>{merchant}</Table.Cell>
-                <Table.Cell>{price}</Table.Cell>
-                <Table.Cell>{purchaseDate}</Table.Cell>
+                <Table.Cell>{amount}</Table.Cell>
+                <Table.Cell>{purchasedOn}</Table.Cell>
+                <Table.Cell>{type}</Table.Cell>
+                <Table.Cell>{balance}</Table.Cell>
               </Table.Row> 
             )
         })} 

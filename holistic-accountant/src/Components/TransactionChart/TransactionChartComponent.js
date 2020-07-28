@@ -50,7 +50,7 @@ function TransactionChartComponent()
    
 
     return (
-    <div id="chart1">
+    <div id="BarChart">
             <Bar id="chart-inner"
             //{console.log("This is the data content: " + this.state.data.labels)}
                                    

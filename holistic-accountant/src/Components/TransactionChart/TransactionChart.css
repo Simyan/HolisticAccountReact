@@ -1,8 +1,9 @@
-#chart1{
+#BarChart{
     background-color: white;
     position: relative;
     height: 300px;
     width: 600px;
+    float: left;
 }
 
 /* #chart-inner{

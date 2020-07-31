@@ -1,5 +1,9 @@
 .Container {
-    
     overflow: hidden; /* will contain if #first is longer than #second */
 }
 
+.NavLink{
+    float: right;
+    padding: 2%;
+    color: red;
+}

@@ -3,28 +3,45 @@ import TransactionChartComponent from "./../TransactionChart/TransactionChartCom
 import TransactionPieChartComponent from "./../TransactionPieChart/TransactionPieChartComponent";
 import StatsCardComponent from "./../StatsCard/StatsCardComponent";
 import "./Dashboard.css";
+import {Link} from "react-router-dom";
+import {Icon} from "semantic-ui-react"
 
 function DashboardComponent() {
   const [avgMonthly, setAvgMonthly] = useState(0);  
   const [avgDaily, setAvgDaily] = useState(0);  
   const [totalDailyExpense, setTotalDailyExpense] = useState(0);
   
+  
   async function getData (url) {
-      let resp = await fetch(url);
-      return await resp.json();
-  }
+    return await fetch(url).json();
+}
 
-  useEffect( async () => {
+  useEffect(() => {
+ //   let ignore = false;
     const url = "https://localhost:44384/transaction/";
-    
-    setAvgMonthly(await getData(url + "AverageMonthlyExpenditure"));
-    setAvgDaily(await getData(url + "AverageExpenditure"));
-    setTotalDailyExpense(await getData(url + "CurrentDayTotalExpenditure"));
-    
+
+    fetch(url + "AverageMonthlyExpenditure")
+           .then((resp) => resp.json())
+           .then((resp) => {
+            setAvgMonthly(resp)
+           })
+    fetch(url + "AverageExpenditure")
+           .then((resp) => resp.json())
+           .then((resp) => {
+            setAvgDaily(resp)
+           })
+    fetch(url + "CurrentDayTotalExpenditure")
+           .then((resp) => resp.json())
+           .then((resp) => {
+            setTotalDailyExpense(resp)
+           })
+
+   // return () => { ignore = true; }
   }, [setAvgMonthly, setAvgDaily, setTotalDailyExpense])
 
   return (
-    <div>
+      <div>
+      <Link className='NavLink' to="/Transactions"><Icon size="big" name="arrow right" /></Link>
       <StatsCardComponent value = {avgMonthly} label = 'Average Monthly Expense'/>
       <StatsCardComponent value = {avgDaily} label = 'Average Daily Expense'/>
       <StatsCardComponent value = {totalDailyExpense} label = 'Current Day Expense'/>

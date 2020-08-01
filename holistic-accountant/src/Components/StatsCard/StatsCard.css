@@ -1,0 +1,13 @@
+.StatsContainer{
+    width: 22.5%;
+    background-color: #f1faee;
+    border-radius: 5%;
+    padding: 2.5em;
+    margin-left: 1em;
+    
+}
+.StatsDiv{
+    background-color: #f1faee;
+    display: inline;
+    margin-left: 7%;
+}

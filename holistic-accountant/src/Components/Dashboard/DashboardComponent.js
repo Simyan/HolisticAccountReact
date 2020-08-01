@@ -5,6 +5,7 @@ import StatsCardComponent from "./../StatsCard/StatsCardComponent";
 import "./Dashboard.css";
 import {Link} from "react-router-dom";
 import {Icon} from "semantic-ui-react"
+import {Statistic} from 'semantic-ui-react'
 
 function DashboardComponent() {
   const [avgMonthly, setAvgMonthly] = useState(0);  
@@ -42,13 +43,17 @@ function DashboardComponent() {
   return (
       <div>
       <Link className='NavLink' to="/Transactions"><Icon size="big" name="arrow right" /></Link>
+      <div className='StatsCard'>
+      {/* <Statistic.Group even widths='three'> */}
       <StatsCardComponent value = {avgMonthly} label = 'Average Monthly Expense'/>
       <StatsCardComponent value = {avgDaily} label = 'Average Daily Expense'/>
       <StatsCardComponent value = {totalDailyExpense} label = 'Current Day Expense'/>
-
+      {/* </Statistic.Group> */}
+      </div>
       <div className="Container">
-        <TransactionChartComponent />
-        <TransactionPieChartComponent />
+        
+        <TransactionChartComponent className="BarChart" />
+        <TransactionPieChartComponent className="PieChart"  />
       </div>
     </div>
   );

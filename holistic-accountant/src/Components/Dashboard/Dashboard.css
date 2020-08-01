@@ -1,9 +1,23 @@
 .Container {
+    background-colsor: red;
+    height: 500px;
+    padding: 8em;
+    padding-top: 0em;
+    margin-top: 100px;
     overflow: hidden; /* will contain if #first is longer than #second */
 }
 
 .NavLink{
     float: right;
     padding: 2%;
-    color: red;
+    color: #e63946;
+}
+
+.StatsCard{
+  
+   
+   height: 150px;
+   padding-top: 2%;
+   padding-left: 5%;
+   padding-bottom: 8%;
 }

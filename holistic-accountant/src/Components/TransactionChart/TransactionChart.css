@@ -1,9 +1,13 @@
 #BarChart{
-    background-color: white;
+    background-color: #f1faee;
     position: relative;
-    height: 300px;
-    width: 600px;
+    height: 410px;
+    width: 750px;
+    padding: 2%;
     float: left;
+    border-radius: 3%;
+    border-color: darkslategray;
+    border-width: 50px;
 }
 
 /* #chart-inner{

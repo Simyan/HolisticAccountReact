@@ -30,7 +30,29 @@ function TransactionPieChartComponent()
     },
 
     options: {
-      responsive: true
+        legend: { 
+            labels: {
+                fontSize: 19
+            }
+        },
+      responsive: true,
+      scales: {
+        xAxes: [
+          {
+            scaleLabel: {
+              display: true,
+              fontSize: 20,
+              labelString: "Monthly Expenditure",
+            },
+            ticks: { display: false },
+            gridLines: {
+              display: false,
+              drawBorder: false,
+            },
+          },
+        ],
+    
+      },
     }
     }
 
@@ -56,6 +78,7 @@ function TransactionPieChartComponent()
     <div id="PieChart">
             <Pie                        
                 data = {chart.data}
+                options = {chart.options}
             />
     </div>
     )

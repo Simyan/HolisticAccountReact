@@ -1,7 +1,11 @@
 #PieChart{
+    float: right;
     position: relative;
-    height: 300px;
-    width: 600px;
+    height: 410px;
+    width: 650px;
     overflow: hidden;
+    background-color: #f1faee;
+    border-radius: 3%;
+    padding: 2%
 }
 

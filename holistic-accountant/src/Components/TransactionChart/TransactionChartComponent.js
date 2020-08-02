@@ -74,7 +74,7 @@ function TransactionChartComponent() {
   };
 
   useEffect(() => {
-    const url = "https://localhost:44384/transaction/MonthlyDailyExpenditure";
+    const url = "https://holisticaccountant20200802075642.azurewebsites.net/transaction/MonthlyDailyExpenditure";
 
     fetch(url)
       .then((resp) => resp.json())

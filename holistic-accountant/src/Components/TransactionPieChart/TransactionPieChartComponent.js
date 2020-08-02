@@ -59,7 +59,7 @@ function TransactionPieChartComponent()
    
 
     useEffect(() => {
-        const url = "https://localhost:44384/transaction/MonthlyCategoryExpenditure";
+        const url = "https://holisticaccountant20200802075642.azurewebsites.net/transaction/MonthlyCategoryExpenditure";
         
         fetch(url)
            .then((resp) => resp.json())

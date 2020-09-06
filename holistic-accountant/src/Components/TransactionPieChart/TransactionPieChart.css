@@ -1,8 +1,8 @@
 #PieChart{
-    float: right;
+    display: inline-block;
     position: relative;
-    height: 410px;
-    width: 650px;
+    height: 100%;
+    width: 90%;
     overflow: hidden;
     background-color: #f1faee;
     border-radius: 3%;

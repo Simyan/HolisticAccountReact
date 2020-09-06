@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Table} from 'semantic-ui-react'
+import './TransactionTable.css';
 
 
 function TransactionTableComponent(){
@@ -19,8 +20,8 @@ function TransactionTableComponent(){
  }, [setTransactionState])
 
   return (
-  <div>
-     
+  <div className='TableWrapper'>
+    <h1>All Transactions</h1>
     <Table striped>
     <Table.Header>
       <Table.Row>

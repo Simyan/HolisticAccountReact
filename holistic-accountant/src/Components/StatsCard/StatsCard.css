@@ -1,13 +1,47 @@
 .StatsContainer{
-    width: 22.5%;
+    width: 62.5%;
     background-color: #f1faee;
     border-radius: 5%;
     padding: 2.5em;
     margin-left: 1em;
-    
+    font-size: 90%;
 }
 .StatsDiv{
     background-color: #f1faee;
     display: inline;
     margin-left: 7%;
 }
+
+.newStatsContainer{
+    background-color: #f1faee;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    margin-top: 60px;
+    margin-left: 7%;
+    display: table;
+    border-radius: 5%;
+    border-color: darkslategray;
+    border-width: 50px;
+    text-align: center;
+}
+
+.statsLabel{
+    display: block;
+    font-size: 1.0em;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    margin-top: 22px;
+    text-transform:uppercase;
+}
+
+.statsValue{
+    display: block;
+    font-size: 4.8em;
+    font-weight: 600;
+    margin-top: 60px;
+}
+
+
+

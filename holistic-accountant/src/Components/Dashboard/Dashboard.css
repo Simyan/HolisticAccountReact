@@ -14,10 +14,15 @@
 }
 
 .StatsCard{
-  
-   
    height: 150px;
    padding-top: 2%;
    padding-left: 5%;
    padding-bottom: 8%;
+}
+
+.Wrapper{
+    padding-left: 3%;
+    padding-top: 6.5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }

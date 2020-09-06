@@ -4,7 +4,7 @@ import TransactionPieChartComponent from "./../TransactionPieChart/TransactionPi
 import StatsCardComponent from "./../StatsCard/StatsCardComponent";
 import "./Dashboard.css";
 import {Link} from "react-router-dom";
-import {Icon} from "semantic-ui-react"
+import {Icon, Grid} from "semantic-ui-react"
 import {Statistic} from 'semantic-ui-react'
 
 function DashboardComponent() {
@@ -43,18 +43,18 @@ function DashboardComponent() {
   return (
       <div>
       <Link className='NavLink' to="/Transactions"><Icon size="big" name="arrow right" /></Link>
-      <div className='StatsCard'>
-      {/* <Statistic.Group even widths='three'> */}
-      <StatsCardComponent value = {avgMonthly} label = 'Average Monthly Expense'/>
-      <StatsCardComponent value = {avgDaily} label = 'Average Daily Expense'/>
-      <StatsCardComponent value = {totalDailyExpense} label = 'Current Day Expense'/>
-      {/* </Statistic.Group> */}
-      </div>
-      <div className="Container">
-        
-        <TransactionChartComponent className="BarChart" />
-        <TransactionPieChartComponent className="PieChart"  />
-      </div>
+      <Grid columns='equal'>
+      <Grid.Row>
+      <Grid.Column><StatsCardComponent value = {avgMonthly} label = 'Average Monthly Expense'/></Grid.Column>
+      <Grid.Column><StatsCardComponent value = {avgDaily} label = 'Average Daily Expense'/></Grid.Column>
+      <Grid.Column><StatsCardComponent value = {totalDailyExpense} label = 'Current Day Expense'/></Grid.Column>
+      </Grid.Row>
+      </Grid>      
+
+    <div className="Wrapper">
+      <TransactionChartComponent className="BarChart" />
+      <TransactionPieChartComponent className="PieChart"  />
+    </div>
     </div>
   );
 }

@@ -1,10 +1,11 @@
 #BarChart{
     background-color: #f1faee;
     position: relative;
-    height: 410px;
-    width: 750px;
+    height: 100%;
+    width: 90%;
     padding: 2%;
-    float: left;
+    display: inline-block;
+ 
     border-radius: 3%;
     border-color: darkslategray;
     border-width: 50px;
